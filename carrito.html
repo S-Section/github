@@ -3,49 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Fútbol</title>
+    <title>Carrito de Compras</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <h1>Tienda de Fútbol</h1>
+        <h1>Carrito de Compras</h1>
         <nav>
             <a href="index.html">Inicio</a>
             <a href="productos.html">Productos</a>
             <a href="ofertas.html">Ofertas</a>
             <a href="contacto.html">Contacto</a>
+            <a href="carrito.html">Carrito</a>
         </nav>
     </header>
 
     <main>
-        <section class="productos">
-            <h2>Productos Destacados</h2>
-            <div class="producto">
-                <img src="img/colombia_100.jfif" alt="Camiseta de Fútbol">
-                <h3>Camiseta de Fútbol</h3>
-                <p>Precio: $50</p>
-                <button onclick="agregarAlCarrito('Camiseta de Fútbol')">Añadir al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="img/Milan_2006.jfif" alt="Camiseta de Fútbol">
-                <h3>Camiseta de Fútbol</h3>
-                <p>Precio: $50</p>
-                <button onclick="agregarAlCarrito('Camiseta de Fútbol')">Añadir al carrito</button>
-            </div>
-            <div class="producto">
-                <img src="img/Barca24-25.jpg" alt="Camiseta de Fútbol">
-                <h3>Camiseta de Fútbol</h3>
-                <p>Precio: $50</p>
-                <button onclick="agregarAlCarrito('Camiseta de Fútbol')">Añadir al carrito</button>
-            </div>
-            <!--Agregar mas productos destacados en el menu principal-->
+        <section class="carrito">
+            <h2>Productos en el Carrito</h2>
+            <ul id="listaCarrito"></ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Tienda de Fútbol. Todos los derechos reservados.</p>
+        <p>© 2024 Tienda de Fútbol. Todos los derechos reservados.</p>
     </footer>
     
-    <script src="js/script.js"></script>
+    <script src="js/carrito.js"></script>
 </body>
 </html>
