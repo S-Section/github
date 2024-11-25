@@ -75,12 +75,48 @@ button:hover {
     background-color: #555;
 }
 
+/* Pie de página */
 footer {
     background-color: #333;
     color: white;
-    text-align: center;
-    padding: 10px 0;
+    padding: 20px 30px;
     position: fixed;
     width: 100%;
     bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+footer .ayuda-titulo {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+footer .ayuda {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+footer .ayuda a {
+    color: #4da6ff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+footer .ayuda a:hover {
+    text-decoration: underline;
+}
+
+footer .copyright {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #ccc;
 }

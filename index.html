@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Tienda de Fútbol</h1>
+        <h1>Vive Mas Futbol</h1>
         <nav>
             <a href="index.html">Inicio</a>
             <a href="productos.html">Productos</a>
@@ -23,34 +23,46 @@
             <div class="producto">
                 <img src="img/colombia_100.jfif" alt="Camiseta Seleccion Colombia 100 Años">
                 <h3>Camiseta Seleccion Colombia 100 Años</h3>
-                <p>Precio: $50</p>
-                <button onclick="agregarAlCarrito('Camiseta de Fútbol')">Añadir al carrito</button>
+                <p>Precio: $60</p>
+                <button onclick="agregarAlCarrito('Camiseta Selección Colombia 100 Años', 'img/colombia_100.jfif', 60)">Añadir al carrito</button>
             </div>
             <div class="producto">
                 <img src="img/Milan_2006.jfif" alt="Camiseta de Fútbol">
                 <h3>Camiseta Milan 2007</h3>
-                <p>Precio: $50</p>
-                <button onclick="agregarAlCarrito('Camiseta de Fútbol')">Añadir al carrito</button>
+                <p>Precio: $70</p>
+                <button onclick="agregarAlCarrito('Camiseta Milan 2007', 'img/Milan_2006.jfif', 70)">Añadir al carrito</button>
             </div>
             <div class="producto">
                 <img src="img/Barca24-25.jpg" alt="Camiseta de Fútbol">
                 <h3>Camiseta Barca 24-25</h3>
-                <p>Precio: $50</p>
-                <button onclick="agregarAlCarrito('Camiseta de Fútbol')">Añadir al carrito</button>
+                <p>Precio: $60</p>
+                <button onclick="agregarAlCarrito('Camiseta Barca 24-25', 'img/Barca24-25.jpg', 60)">Añadir al carrito</button>
             </div>
         </section>
+        
     </main>
 
     <footer>
-        <p>&copy; 2024 Tienda de Fútbol. Todos los derechos reservados.</p>
+        <div class="ayuda-titulo">Ayuda</div>
+        <div class="ayuda">
+            <a href="#">Servicio al Cliente</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Políticas de Envío</a>
+        </div>
+        <div class="copyright">© 2024 ViveMasFutbol. Todos los derechos reservados.</div>
     </footer>
-    
+
     <script>
-        function agregarAlCarrito(producto) {
+        // Función para agregar productos al carrito
+        function agregarAlCarrito(nombre, imagen, precio) {
+            // Recupera el carrito existente o lo inicializa vacío
             let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            carrito.push(producto);
+            // Agrega el nuevo producto al carrito
+            carrito.push({ nombre: nombre, imagen: imagen, precio: parseFloat(precio) });
+            // Guarda el carrito actualizado en localStorage
             localStorage.setItem('carrito', JSON.stringify(carrito));
-            alert(producto + ' ha sido añadido al carrito.');
+            alert(nombre + ' ha sido añadido al carrito.');
         }
     </script>
 </body>

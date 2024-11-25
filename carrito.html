@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras</title>
+    <title>Tienda de Fútbol - Carrito</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <h1>Carrito de Compras</h1>
+        <h1>Vive Más Fútbol</h1>
         <nav>
             <a href="index.html">Inicio</a>
             <a href="productos.html">Productos</a>
@@ -18,16 +18,74 @@
     </header>
 
     <main>
-        <section class="carrito">
-            <h2>Productos en el Carrito</h2>
-            <ul id="listaCarrito"></ul>
-        </section>
+        <h2>Carrito de Compras</h2>
+        <div id="carrito-contenedor">
+            <!-- Los productos seleccionados se agregarán aquí -->
+        </div>
+        <div id="carrito-total">
+            <h3>Total: $<span id="total">0</span></h3>
+        </div>
     </main>
 
     <footer>
-        <p>© 2024 Tienda de Fútbol. Todos los derechos reservados.</p>
+        <div class="ayuda-titulo">Ayuda</div>
+        <div class="ayuda">
+            <a href="#">Servicio al Cliente</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Políticas de Envío</a>
+        </div>
+        <div class="copyright">© 2024 ViveMasFutbol. Todos los derechos reservados.</div>
     </footer>
     
-    <script src="js/carrito.js"></script>
+    <script>
+        // Función para agregar productos al carrito con todos sus datos
+        function agregarAlCarrito(nombre, imagen, precio) {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push({ nombre, imagen, precio });
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert(nombre + ' ha sido añadido al carrito.');
+        }
+
+        // Función para cargar productos en el carrito
+        function cargarCarrito() {
+            const carritoContenedor = document.getElementById('carrito-contenedor');
+            const totalElement = document.getElementById('total');
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            let total = 0;
+
+            carritoContenedor.innerHTML = ''; // Limpiar contenedor
+            carrito.forEach((producto, index) => {
+                total += parseFloat(producto.precio);
+
+                // Crear elemento HTML para cada producto
+                const productoDiv = document.createElement('div');
+                productoDiv.className = 'producto-carrito';
+                productoDiv.innerHTML = `
+                    <img src="${producto.imagen}" alt="${producto.nombre}" class="producto-imagen">
+                    <div class="producto-detalle">
+                        <h4>${producto.nombre}</h4>
+                        <p>Precio: $${producto.precio}</p>
+                    </div>
+                    <button onclick="eliminarProducto(${index})">Eliminar</button>
+                `;
+                carritoContenedor.appendChild(productoDiv);
+            });
+
+            totalElement.textContent = total.toFixed(2);
+        }
+
+        // Función para eliminar un producto del carrito
+        function eliminarProducto(index) {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.splice(index, 1);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            cargarCarrito(); // Recargar carrito
+        }
+
+        // Cargar carrito al abrir la página
+        window.onload = cargarCarrito;
+    </script>
 </body>
 </html>
+
