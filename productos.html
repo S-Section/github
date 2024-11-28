@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - Tienda de Fútbol</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stylesproduc.css">
     <style>
         .productos-seccion {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         .productos-lista {
@@ -37,11 +37,256 @@
         </nav>
     </header>
 
+    <h1>Buscador de Camisetas</h1>
+
+    <!-- Barra de búsqueda -->
+    <input type="text" id="buscador" placeholder="Buscar camiseta..." oninput="filtrarCamisetas()">
+
+    <!-- Lista de productos (Camisetas) -->
+    <div id="resultados">
+        <div class="producto" data-nombre="Camiseta Milan 2006" data-equipo="Milan" data-liga="Serie A">
+            <img src="img/Milan_2006.jfif" alt="Camiseta Milan">
+            <h3>Camiseta Milan 2006</h3>
+            <p>Precio: $70</p>
+            <button onclick="agregarAlCarrito('Camiseta Milan 2007', 'img/Milan_2006.jfif', 70)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Milan 22-23 Edicion Especial" data-equipo="Milan" data-liga="Serie A">
+            <img src="img/MIlan22-23Especial.jfif" alt="Camiseta Milan">
+            <h3>Camiseta Milan Edi. Especial</h3>
+            <p>Precio: $60</p>
+            <button onclick="agregarAlCarrito('Camiseta Milan Edi.Especial', 'img/MIlan22-23Especial', 60)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Inter de Milan 23-24" data-equipo="Inter Milan" data-liga="Serie A">
+            <img src="img/inter 23-24.jfif" alt="Camiseta Inter">
+            <h3>Camiseta Inter de Milan 23-24</h3>
+            <p>Precio: $55</p>
+            <button onclick="agregarAlCarrito('Camiseta Inter de Milan 23-24', 'img/inter 23-24.jfif', 55)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Roma 24-25" data-equipo="Roma" data-liga="Serie A">
+            <img src="img/Roma 24-25.jfif" alt="Camiseta de Roma">
+            <h3>Camiseta Roma 24-25</h3>
+            <p>Precio: $55</p>
+            <button onclick="agregarAlCarrito('Camiseta Roma 24-25', 'img/Roma 24-25.jfif', 55)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Napoli 23-24" data-equipo="Napoli" data-liga="Serie A">
+            <img src="img/napoli_23-24.jfif" alt="Camiseta Napoli">
+                <h3>Camiseta Napoli 23-24</h3>
+                <p>Precio: $60</p>
+                <button onclick="agregarAlCarrito('Camiseta Napoli 23-24', 'img/napoli_23-24.jfif', 60)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Napoli Maradona" data-equipo="Napoli" data-liga="Serie A">
+            <img src="img/Napoli_Maradona.jfif" alt="Camiseta Napoli">
+            <h3>Camiseta Napoli 1984 Maradona</h3>
+            <p>Precio: $65</p>
+            <button onclick="agregarAlCarrito('Camiseta Napoli 1984 Maradona', 'img/Napoli_Maradona.jfif', 65)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Juventus 2024" data-equipo="Juventus" data-liga="Serie A">
+            <img src="img/Juventus20-21" alt="Camiseta Juventus">
+            <h4>Camiseta Juventus 2024</h4>
+            <p>Serie A</p>
+            <p>$70</p>
+        </div>
+
+
+
+
+        <div class="producto" data-nombre="Camiseta Real Madrid 24 25" data-equipo="Real Madrid" data-liga="La Liga">
+            <img src="img/Real-Madrid24-25.jpg" alt="Camiseta de Fútbol">
+            <h3>Camiseta Real Madrid 24-25</h3>
+            <p>Precio: $60</p>
+            <button onclick="agregarAlCarrito('Camiseta Real Madrid 24 25', 'img/Real-Madrid24-25.jpg', 60)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Barcelona 2024" data-equipo="Barcelona, Barca"data-liga="La Liga">
+            <img src="img/Barca24-25.jpg" alt="Camiseta Barcelona">
+            <h3>Camiseta Barca 24-25</h3>
+            <p>Precio: $60</p>
+            <button onclick="agregarAlCarrito('Camiseta Barca 24 25', 'img/Barca24-25.jpg', 60)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Barcelona 2024" data-equipo="Barcelona, Barca"data-liga="La Liga">
+            <img src="img/BarcaSextete.jpg" alt="Camiseta Barcelona">
+            <h3>Camiseta Barca Sextete Messi</h3>
+            <p>Precio: $80</p>
+            <button onclick="agregarAlCarrito('Camiseta Barca Sextete Messi', 'img/BarcaSextete.jpg', 80)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Barcelona 2024" data-equipo="Barcelona, Barca"data-liga="La Liga">
+            <img src="img/Atleti.jpg" alt="Camiseta Atletico Madrid">
+            <h3>Camiseta Atletico Madrid Julian Alvarez</h3>
+            <p>Precio: $60</p>
+            <button onclick="agregarAlCarrito('Camiseta Atletico Madrid Julian Alvarez', 'img/Atleti.jpg', 60)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Barcelona 2024" data-equipo="Barcelona, Barca"data-liga="La Liga">
+            <img src="img/RealSociedad.jfif" alt="Camiseta Real Sociedad">
+            <h3>Camiseta Real Sociedad 2018</h3>
+            <p>Precio: $55</p>
+            <button onclick="agregarAlCarrito('Camiseta Real Sociedad 2018', 'img/RealSociedad.jfif', 55)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Barcelona 2024" data-equipo="Barcelona, Barca"data-liga="La Liga">
+            <img src="img/Sevilla Ramos.jfif" alt="Camiseta Sevilla">
+            <h3>Camiseta Sevilla Sergio Ramos</h3>
+            <p>Precio: $55</p>
+            <button onclick="agregarAlCarrito('Camiseta Sevilla Sergio Ramos', 'img/Sevilla Ramos.jfif', 55)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Barcelona 2024" data-equipo="Barcelona, Barca"data-liga="La Liga">
+            <img src="img/MadridCR72008.jfif" alt="Camiseta Real Madrid">
+            <h3>Camiseta CR7 Real Madrid Champions 2018</h3>
+            <p>Precio: $70</p>
+            <button onclick="agregarAlCarrito('Camiseta CR7 Real Madrid Champions 2018', 'img/MadridCR72008.jfif', 70)">Añadir al carrito</button>
+        </div>
+
+
+
+
+
+    
+        <div class="producto" data-nombre="Camiseta Manchester United 2024" data-equipo="Manchester United" data-liga="Premier League">
+            <img src="img/ManUTD2008.jpeg" alt="Camiseta Manchester United">
+                <h3>Camiseta Manchester United Ronaldo 2008</h3>
+                <p>Precio: $60</p>
+                <button onclick="agregarAlCarrito('Camiseta Manchester United Ronaldo 2008', 'img/ManUTD2008.jpeg', 60)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Manchester City Halland 23-24" data-equipo="Manchester City" data-liga="Premier League">
+            <img src="img/CityHalland 22-23.jfif" alt="Camiseta Manchester City">
+                <h3>Camiseta Manchester City Halland 22-23</h3>
+                <p>Precio: $65</p>
+                <button onclick="agregarAlCarrito('Camiseta Manchester City Halland 22-23', 'img/CityHalland 22-23.jfif', 65)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Liverpool" data-equipo="Liverpool" data-liga="Premier League">
+            <img src="img/LiverpollLucho.jfif" alt="Camiseta Liverpool">
+                <h3>Camiseta Liverpool Luiz Diaz 23-24</h3>
+                <p>Precio: $65</p>
+                <button onclick="agregarAlCarrito('Camiseta Liverpool Luiz Diaz 23-24', 'img/LiverpollLucho.jfif', 65)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Tottenham" data-equipo="Tottenham, 18, 19" data-liga="Premier League">
+            <img src="img/Tottenham 18-19.jpg" alt="Camiseta Tottenham">
+                <h3>Camiseta Tottenham 18-19</h3>
+                <p>Precio: $65</p>
+                <button onclick="agregarAlCarrito('Camiseta Tottenham 18-19', 'img/Tottenham 18-19.jpg', 65)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Chelsea 23-24" data-equipo="Chelsea 23, 24" data-liga="Premier League">
+            <img src="img/chelsea.jpg" alt="Camiseta Chelsea">
+                <h3>Camiseta Chelsea 23-24</h3>
+                <p>Precio: $65</p>
+                <button onclick="agregarAlCarrito('Camiseta Chelsea Cole Palmer 23-24', 'img/Celsea23-24Palmer.jfif', 65)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Manchester United 2024" data-equipo="Manchester United" data-liga="Premier League">
+            <img src="img/ManUTDGarnacho.jfif" alt="Camiseta Manchester United">
+                <h3>Camiseta Manchester United Garnacho</h3>
+                <p>Precio: $65</p>
+                <button onclick="agregarAlCarrito('Camiseta Manchester United Garnacho', 'img/ManUTDGarnacho.jfif', 65)">Añadir al carrito</button>
+        </div>
+
+
+
+
+
+        <div class="producto" data-nombre="Camiseta America Edicion Especial" data-equipo="America" data-liga="Bet-play">
+            <img src="img/America.jfif" alt="Camiseta America">
+            <h3>Camiseta America Edi. Especial</h3>
+            <p>Precio: $45</p>
+            <button onclick="agregarAlCarrito('Camiseta America Edi. Especial', 'img/America.jfif', 45)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Santa fe" data-equipo="Santa fe" data-liga="Bet-play">
+            <img src="img/Santafe.jfif" alt="Camiseta Santa Fé">
+            <h3>Camiseta Santa Fé</h3>
+            <p>Precio: $50</p>
+            <button onclick="agregarAlCarrito('Camiseta Santa Fé', 'img/Santafe.jfif', 50)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Nacional" data-equipo="Nacional" data-liga="Bet-play">
+            <img src="img/Nacional.jfif" alt="Camiseta Nacional">
+            <h3>Camiseta Nacional 2024</h3>
+            <p>Precio: $60</p>
+            <button onclick="agregarAlCarrito('Camiseta Nacional 2024', 'img/Nacional.jfif', 60)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Millonarios 23, 24" data-equipo="Millonarios" data-liga="Bet-play">
+            <img src="img/Millos.jfif" alt="Camiseta de Millonarios">
+            <h3>Camiseta Millonarios Falcao</h3>
+            <p>Precio: $65</p>
+            <button onclick="agregarAlCarrito('Camiseta Millonarios Falcao', 'img/Millos.jfif', 65)">Añadir al carrito</button>
+        </div>
+
+
+
+
+
+        <div class="producto" data-nombre="Camiseta Talleres" data-equipo="Talleres" data-liga="Liga Profesional Argentina">
+            <img src="img/talleres.jfif" alt="Camiseta Talleres">
+            <h3>Camiseta Talleres 2023</h3>
+            <p>Precio: $55</p>
+            <button onclick="agregarAlCarrito('Camiseta Talleres 2023', 'img/talleres.jfif', 55)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta River" data-equipo="River" data-liga="Liga Profesional Argentina">
+            <img src="img/River.jpg" alt="Camiseta River">
+            <h3>Camiseta River Quintero</h3>
+            <p>Precio: $65</p>
+            <button onclick="agregarAlCarrito('Camiseta River Quintero', 'img/River.jpg', 65)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Boca" data-equipo="Boca" data-liga="Liga Profesional Argentina">
+            <img src="img/boca.jfif" alt="Camiseta Boca Juniors">
+            <h3>Camiseta Boca Juniors 2023</h3>
+            <p>Precio: $55</p>
+            <button onclick="agregarAlCarrito('Camiseta Boca Juniors 2023', 'img/boca.jfif', 55)">Añadir al carrito</button>
+        </div>
+
+
+
+
+
+        <div class="producto" data-nombre="Camiseta Santos de Brasil Neymar jr" data-equipo="Santos de Brasil" data-liga="Brasileirao">
+            <img src="img/neymarsantos.jpg" alt="Camiseta Santos de Brasil">
+            <h3>Camiseta Santos Neymar</h3>
+            <p>Precio: $65</p>
+            <button onclick="agregarAlCarrito('Camiseta Santos Neymar', 'img/neymarsantos.jpg', 65)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Flamengo" data-equipo="Flamengo" data-liga="Brasileirao">
+            <img src="img/flamengo.jfif" alt="Camiseta Flamengo">
+            <h3>Camiseta Falmengo</h3>
+            <p>Precio: $50</p>
+            <button onclick="agregarAlCarrito('Camiseta Falmengo', 'img/flamengo.jfif', 50)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Palmeiras Richard Rios" data-equipo="Palmeiras" data-liga="Brasileirao">
+            <img src="img/Palmeiras.jfif" alt="Camiseta Palmeiras">
+            <h3>Camiseta Palmeiras Richard Rios</h3>
+            <p>Precio: $60</p>
+            <button onclick="agregarAlCarrito('Camiseta Palmeiras Richard Rios', 'img/Palmeiras.jfif', 60)">Añadir al carrito</button>
+        </div>
+
+
+
+
+
+        <div class="producto" data-nombre="Camiseta Seleccion Colombia" data-equipo="Seleccion Colombia" data-liga="Selecciones">
+            <img src="img/colombia_100.jfif" alt="Camiseta Seleccion Colombia">
+            <h3>Camiseta Seleccion Colombia 100 Años</h3>
+            <p>Precio: $60</p>
+            <button onclick="agregarAlCarrito('Camiseta Seleccion Colombia 100 Años', 'img/colombia_100.jfif', 60)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Seleccion Colombia" data-equipo="Seleccion Colombia" data-liga="Selecciones">
+            <img src="img/colombia2001.jfif" alt="Camiseta Seleccion Colombia">
+            <h3>Camiseta Seleccion Colombia Copa America 2001</h3>
+            <p>Precio: $75</p>
+            <button onclick="agregarAlCarrito('Camiseta Seleccion Colombia Copa America 2001', 'img/colombia2001.jfif', 75)">Añadir al carrito</button>
+        </div>
+        <div class="producto" data-nombre="Camiseta Seleccion Colombia" data-equipo="Seleccion Colombia" data-liga="Selecciones">
+            <img src="img/colombia2024.jpg" alt="Camiseta Seleccion Colombia">
+            <h3>Camiseta Seleccion Colombia Copa America 2024</h3>
+            <p>Precio: $60</p>
+            <button onclick="agregarAlCarrito('Camiseta Seleccion Colombia Copa America 2024', 'img/colombia2024.jpg', 60)">Añadir al carrito</button>
+        </div>
+    </div>
+
+
+    <div class="disponibilidad">
+        <h3>Disponibilidad</h3>
+        <p>Los productos disponibles son enviados dentro de las 24 horas.</p>
+    </div>
+
     <div class="productos-seccion">
         <h2 class="productos-titulo" onclick="toggleSeccion('serie-a')">Camisetas Serie A</h2>
+        
+        
         <div id="serie-a" class="productos-lista">
             <div class="producto">
-                <img src="img/Milan_2006.jfif" alt="Camiseta de Fútbol">
+                <img src="img/Milan_2006.jfif" alt="Camiseta Milan">
                 <h3>Camiseta Milan 2007</h3>
                 <p>Precio: $70</p>
                 <button onclick="agregarAlCarrito('Camiseta Milan 2007', 'img/Milan_2006.jfif', 70)">Añadir al carrito</button>
@@ -49,7 +294,7 @@
             <p></p>
 
             <div class="producto">
-                <img src="img/MIlan22-23Especial.jfif" alt="Camiseta de Fútbol">
+                <img src="img/MIlan22-23Especial.jfif" alt="Camiseta Milan">
                 <h3>Camiseta Milan Edi. Especial</h3>
                 <p>Precio: $60</p>
                 <button onclick="agregarAlCarrito('Camiseta Milan Edi.Especial', 'img/MIlan22-23Especial', 60)">Añadir al carrito</button>
@@ -57,7 +302,7 @@
             <p></p>
 
             <div class="producto">
-                <img src="img/inter 23-24.jfif" alt="Camiseta de Fútbol">
+                <img src="img/inter 23-24.jfif" alt="Camiseta Inter">
                 <h3>Camiseta Inter de Milan 23-24</h3>
                 <p>Precio: $55</p>
                 <button onclick="agregarAlCarrito('Camiseta Inter de Milan 23-24', 'img/inter 23-24.jfif', 55)">Añadir al carrito</button>
@@ -65,7 +310,7 @@
             <p></p>
 
             <div class="producto">
-                <img src="img/Roma 24-25.jfif" alt="Camiseta de Fútbol">
+                <img src="img/Roma 24-25.jfif" alt="Camiseta de Roma">
                 <h3>Camiseta Roma 24-25</h3>
                 <p>Precio: $55</p>
                 <button onclick="agregarAlCarrito('Camiseta Roma 24-25', 'img/Roma 24-25.jfif', 55)">Añadir al carrito</button>
@@ -73,7 +318,7 @@
             <p></p>
 
             <div class="producto">
-                <img src="img/napoli_23-24.jfif" alt="Camiseta de Fútbol">
+                <img src="img/napoli_23-24.jfif" alt="Camiseta Napoli">
                 <h3>Camiseta Napoli 23-24</h3>
                 <p>Precio: $60</p>
                 <button onclick="agregarAlCarrito('Camiseta Napoli 23-24', 'img/napoli_23-24.jfif', 60)">Añadir al carrito</button>
@@ -81,7 +326,7 @@
             <p></p>
 
             <div class="producto">
-                <img src="img/Napoli_Maradona.jfif" alt="Camiseta de Fútbol">
+                <img src="img/Napoli_Maradona.jfif" alt="Camiseta Napoli">
                 <h3>Camiseta Napoli 1984 Maradona</h3>
                 <p>Precio: $65</p>
                 <button onclick="agregarAlCarrito('Camiseta Napoli 1984 Maradona', 'img/Napoli_Maradona.jfif', 65)">Añadir al carrito</button>
@@ -93,7 +338,7 @@
         <h2 class="productos-titulo" onclick="toggleSeccion('la-liga')">Camisetas La Liga</h2>
         <div id="la-liga" class="productos-lista">
             <div class="producto">
-                <img src="img/Real-Madrid24-25.jpg" alt="Camiseta de Fútbol">
+                <img src="img/Real-Madrid24-25.jpg" alt="Camiseta Real Madrid">
                 <h3>Camiseta Real Madrid 24-25</h3>
                 <p>Precio: $60</p>
                 <button onclick="agregarAlCarrito('Camiseta Real Madrid 24-25', 'img/Real-Madrid24-25.jpg', 60)">Añadir al carrito</button>
@@ -101,7 +346,7 @@
             <p></p>
 
             <div class="producto">
-                <img src="img/Barca24-25.jpg" alt="Camiseta de Fútbol">
+                <img src="img/Barca24-25.jpg" alt="Camiseta Barcelona">
                 <h3>Camiseta Barca 24-25</h3>
                 <p>Precio: $60</p>
                 <button onclick="agregarAlCarrito('Camiseta Barca 24-25', 'img/Barca24-25.jpg', 60)">Añadir al carrito</button>
@@ -109,7 +354,7 @@
             <p></p>
 
             <div class="producto">
-                <img src="img/BarcaSextete.jpg" alt="Camiseta de Fútbol">
+                <img src="img/BarcaSextete.jpg" alt="Camiseta Barcelona">
                 <h3>Camiseta Barca Sextete Messi</h3>
                 <p>Precio: $80</p>
                 <button onclick="agregarAlCarrito('Camiseta Barca Sextete Messi', 'img/BarcaSextete.jpg', 80)">Añadir al carrito</button>
@@ -117,7 +362,7 @@
             <p></p>
 
             <div class="producto">
-                <img src="img/Atleti.jpg" alt="Camiseta de Fútbol">
+                <img src="img/Atleti.jpg" alt="Camiseta Atletico Madrid">
                 <h3>Camiseta Atletico Madrid Julian Alvarez</h3>
                 <p>Precio: $60</p>
                 <button onclick="agregarAlCarrito('Camiseta Atletico Madrid Julian Alvarez', 'img/Atleti.jpg', 60)">Añadir al carrito</button>
@@ -125,7 +370,7 @@
             <p></p>
 
             <div class="producto">
-                <img src="img/RealSociedad.jfif" alt="Camiseta de Fútbol">
+                <img src="img/RealSociedad.jfif" alt="Camiseta Real Sociedad">
                 <h3>Camiseta Real Sociedad 2018</h3>
                 <p>Precio: $55</p>
                 <button onclick="agregarAlCarrito('Camiseta Real Sociedad 2018', 'img/RealSociedad.jfif', 55)">Añadir al carrito</button>
@@ -133,7 +378,7 @@
             <p></p>
 
             <div class="producto">
-                <img src="img/Sevilla Ramos.jfif" alt="Camiseta de Fútbol">
+                <img src="img/Sevilla Ramos.jfif" alt="Camiseta Sevilla">
                 <h3>Camiseta Sevilla Sergio Ramos</h3>
                 <p>Precio: $55</p>
                 <button onclick="agregarAlCarrito('Camiseta Sevilla Sergio Ramos', 'img/Sevilla Ramos.jfif', 55)">Añadir al carrito</button>
@@ -141,7 +386,7 @@
             <p></p>
 
             <div class="producto">
-                <img src="img/MadridCR72008.jfif" alt="Camiseta de Fútbol">
+                <img src="img/MadridCR72008.jfif" alt="Camiseta Real Madrid">
                 <h3>Camiseta CR7 Real Madrid Champions 2018</h3>
                 <p>Precio: $70</p>
                 <button onclick="agregarAlCarrito('Camiseta CR7 Real Madrid Champions 2018', 'img/MadridCR72008.jfif', 70)">Añadir al carrito</button>
@@ -153,7 +398,7 @@
         <h2 class="productos-titulo" onclick="toggleSeccion('premier')">Camisetas Premier League</h2>
         <div id="premier" class="productos-lista">
             <div class="producto">
-                <img src="img/ManUTD2008.jpeg" alt="Camiseta de Fútbol">
+                <img src="img/ManUTD2008.jpeg" alt="Camiseta Manchester United">
                 <h3>Camiseta Manchester United Ronaldo 2008</h3>
                 <p>Precio: $60</p>
                 <button onclick="agregarAlCarrito('Camiseta Manchester United Ronaldo 2008', 'img/ManUTD2008.jpeg', 60)">Añadir al carrito</button>
@@ -161,7 +406,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/CityHalland 22-23.jfif" alt="Camiseta de Fútbol">
+                <img src="img/CityHalland 22-23.jfif" alt="Camiseta Manchester City">
                 <h3>Camiseta Manchester City Halland 22-23</h3>
                 <p>Precio: $65</p>
                 <button onclick="agregarAlCarrito('Camiseta Manchester City Halland 22-23', 'img/CityHalland 22-23.jfif', 65)">Añadir al carrito</button>
@@ -169,7 +414,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/LiverpollLucho.jfif" alt="Camiseta de Fútbol">
+                <img src="img/LiverpollLucho.jfif" alt="Camiseta Liverpool">
                 <h3>Camiseta Liverpool Luiz Diaz 23-24</h3>
                 <p>Precio: $65</p>
                 <button onclick="agregarAlCarrito('Camiseta Liverpool Luiz Diaz 23-24', 'img/LiverpollLucho.jfif', 65)">Añadir al carrito</button>
@@ -177,7 +422,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/Tottenham 18-19.jpg" alt="Camiseta de Fútbol">
+                <img src="img/Tottenham 18-19.jpg" alt="Camiseta Tottenham">
                 <h3>Camiseta Tottenham 18-19</h3>
                 <p>Precio: $65</p>
                 <button onclick="agregarAlCarrito('Camiseta Tottenham 18-19', 'img/Tottenham 18-19.jpg', 65)">Añadir al carrito</button>
@@ -185,7 +430,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/Celsea23-24Palmer.jfif" alt="Camiseta de Fútbol">
+                <img src="img/Chelsea23-24Palmer.jfif" alt="Camiseta Chelsea">
                 <h3>Camiseta Chelsea Cole Palmer 23-24</h3>
                 <p>Precio: $65</p>
                 <button onclick="agregarAlCarrito('Camiseta Chelsea Cole Palmer 23-24', 'img/Celsea23-24Palmer.jfif', 65)">Añadir al carrito</button>
@@ -193,7 +438,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/ManUTDGarnacho.jfif" alt="Camiseta de Fútbol">
+                <img src="img/ManUTDGarnacho.jfif" alt="Camiseta Manchester United">
                 <h3>Camiseta Manchester United Garnacho</h3>
                 <p>Precio: $65</p>
                 <button onclick="agregarAlCarrito('Camiseta Manchester United Garnacho', 'img/ManUTDGarnacho.jfif', 65)">Añadir al carrito</button>
@@ -204,7 +449,7 @@
         <h2 class="productos-titulo" onclick="toggleSeccion('Bet-play')">Camisetas Liga Bet-play</h2>
         <div id="Bet-play" class="productos-lista">
             <div class="producto">
-                <img src="img/America.jfif" alt="Camiseta de Fútbol">
+                <img src="img/America.jfif" alt="Camiseta America">
                 <h3>Camiseta America Edi. Especial</h3>
                 <p>Precio: $45</p>
                 <button onclick="agregarAlCarrito('Camiseta America Edi. Especial', 'img/America.jfif', 45)">Añadir al carrito</button>
@@ -212,7 +457,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/Santafe.jfif" alt="Camiseta de Fútbol">
+                <img src="img/Santafe.jfif" alt="Camiseta Santa Fé">
                 <h3>Camiseta Santa Fé</h3>
                 <p>Precio: $50</p>
                 <button onclick="agregarAlCarrito('Camiseta Santa Fé', 'img/Santafe.jfif', 50)">Añadir al carrito</button>
@@ -220,7 +465,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/Nacional.jfif" alt="Camiseta de Fútbol">
+                <img src="img/Nacional.jfif" alt="Camiseta Nacional">
                 <h3>Camiseta Nacional 2024</h3>
                 <p>Precio: $60</p>
                 <button onclick="agregarAlCarrito('Camiseta Nacional 2024', 'img/Santafe.jfif', 60)">Añadir al carrito</button>
@@ -228,7 +473,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/Millos.jfif" alt="Camiseta de Fútbol">
+                <img src="img/Millos.jfif" alt="Camiseta de Millonarios">
                 <h3>Camiseta Millonarios Falcao</h3>
                 <p>Precio: $65</p>
                 <button onclick="agregarAlCarrito('Camiseta Millonarios Falcao', 'img/Santafe.jfif', 65)">Añadir al carrito</button>
@@ -240,7 +485,7 @@
         <h2 class="productos-titulo" onclick="toggleSeccion('Argentina')">Camisetas Liga Argentina</h2>
         <div id="Argentina" class="productos-lista">
             <div class="producto">
-                <img src="img/talleres.jfif" alt="Camiseta de Fútbol">
+                <img src="img/talleres.jfif" alt="Camiseta Talleres">
                 <h3>Camiseta Talleres 2023</h3>
                 <p>Precio: $55</p>
                 <button onclick="agregarAlCarrito('Camiseta Talleres 2023', 'img/talleres.jfif', 55)">Añadir al carrito</button>
@@ -248,7 +493,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/River.jpg" alt="Camiseta de Fútbol">
+                <img src="img/River.jpg" alt="Camiseta River">
                 <h3>Camiseta River Quintero</h3>
                 <p>Precio: $65</p>
                 <button onclick="agregarAlCarrito('Camiseta River Quintero', 'img/River.jpg', 65)">Añadir al carrito</button>
@@ -256,7 +501,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/boca.jfif" alt="Camiseta de Fútbol">
+                <img src="img/boca.jfif" alt="Camiseta Boca Juniors">
                 <h3>Camiseta Boca Juniors 2023</h3>
                 <p>Precio: $55</p>
                 <button onclick="agregarAlCarrito('Camiseta Boca Juniors 2023', 'img/boca.jfif', 55)">Añadir al carrito</button>
@@ -269,7 +514,7 @@
         <h2 class="productos-titulo" onclick="toggleSeccion('Brasil')">Camisetas Liga Brasileña</h2>
         <div id="Brasil" class="productos-lista">
             <div class="producto">
-                <img src="img/neymarsantos.jpg" alt="Camiseta de Fútbol">
+                <img src="img/neymarsantos.jpg" alt="Camiseta Santos de Brasil">
                 <h3>Camiseta Santos Neymar</h3>
                 <p>Precio: $65</p>
                 <button onclick="agregarAlCarrito('Camiseta Santos Neymar', 'img/neymarsantos.jpg', 65)">Añadir al carrito</button>
@@ -277,7 +522,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/flamengo.jfif" alt="Camiseta de Fútbol">
+                <img src="img/flamengo.jfif" alt="Camiseta Flamengo">
                 <h3>Camiseta Falmengo</h3>
                 <p>Precio: $50</p>
                 <button onclick="agregarAlCarrito('Camiseta Falmengo', 'img/flamengo.jfif', 50)">Añadir al carrito</button>
@@ -285,7 +530,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/Palmeiras.jfif" alt="Camiseta de Fútbol">
+                <img src="img/Palmeiras.jfif" alt="Camiseta Palmeiras">
                 <h3>Camiseta Palmeiras Richard Rios</h3>
                 <p>Precio: $60</p>
                 <button onclick="agregarAlCarrito('Camiseta Palmeiras Richard Rios', 'img/Palmeiras.jfif', 60)">Añadir al carrito</button>
@@ -297,7 +542,7 @@
         <h2 class="productos-titulo" onclick="toggleSeccion('colombia')">Camisetas Seleccion Colombia</h2>
         <div id="colombia" class="productos-lista">
             <div class="producto">
-                <img src="img/colombia_100.jfif" alt="Camiseta de Fútbol">
+                <img src="img/colombia_100.jfif" alt="Camiseta Seleccion Colombia">
                 <h3>Camiseta Seleccion Colombia 100 Años</h3>
                 <p>Precio: $60</p>
                 <button onclick="agregarAlCarrito('Camiseta Seleccion Colombia 100 Años', 'img/colombia_100.jfif', 60)">Añadir al carrito</button>
@@ -305,7 +550,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/colombia2001.jfif" alt="Camiseta de Fútbol">
+                <img src="img/colombia2001.jfif" alt="Camiseta Seleccion Colombia">
                 <h3>Camiseta Seleccion Colombia Copa America 2001</h3>
                 <p>Precio: $75</p>
                 <button onclick="agregarAlCarrito('Camiseta Seleccion Colombia Copa America 2001', 'img/colombia2001.jfif', 75)">Añadir al carrito</button>
@@ -313,7 +558,7 @@
             <p></p>
     
             <div class="producto">
-                <img src="img/colombia2024.jpg" alt="Camiseta de Fútbol">
+                <img src="img/colombia2024.jpg" alt="Camiseta Seleccion Colombia">
                 <h3>Camiseta Seleccion Colombia Copa America 2024</h3>
                 <p>Precio: $60</p>
                 <button onclick="agregarAlCarrito('Camiseta Seleccion Colombia Copa America 2024', 'img/colombia2024.jpg', 60)">Añadir al carrito</button>
@@ -335,6 +580,30 @@
     </footer>
 
     <script>
+
+        // Función para filtrar las camisetas según la búsqueda
+        function filtrarCamisetas() {
+            // Obtén el valor del campo de búsqueda
+            var busqueda = document.getElementById('buscador').value.toLowerCase();
+            
+            // Obtén todos los productos
+            var productos = document.querySelectorAll('.producto');
+
+            // Recorre todos los productos y oculta los que no coincidan con la búsqueda
+            productos.forEach(function(producto) {
+                var nombre = producto.getAttribute('data-nombre').toLowerCase();
+                var equipo = producto.getAttribute('data-equipo').toLowerCase();
+                var liga = producto.getAttribute('data-liga').toLowerCase();
+
+                // Si el nombre, equipo o liga coinciden con la búsqueda, se muestra el producto
+                if (nombre.includes(busqueda) || equipo.includes(busqueda) || liga.includes(busqueda)) {
+                    producto.style.display = 'inline-block'; // Mostrar producto
+                } else {
+                    producto.style.display = 'none'; // Ocultar producto
+                }
+            });
+        }
+        
         // Función para alternar la visibilidad de una sección
         function toggleSeccion(id) {
             const seccion = document.getElementById(id);
